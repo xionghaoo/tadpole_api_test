@@ -1,7 +1,26 @@
-# mysql
+---
+# 本机配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test
     username: xionghao
     password: 123456
+  config:
+    activate:
+      on-profile: test
+---
+# vps 配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://96.45.191.180:3306/test
+    username: xionghao
+    password: Hello@0316
+  config:
+    activate:
+      on-profile: pro
+---
+spring:
+  profiles:
+    active: test
